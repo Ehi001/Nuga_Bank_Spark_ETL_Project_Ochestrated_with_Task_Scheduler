@@ -51,9 +51,9 @@ df_clean = df_clean.na.drop(subset = ['Last_Updated'])
 # Data Transformation to 2NF
 # Transaction Table
 
-transaction = df_clean.select() \
+transaction = df_clean.select('Transaction_Date', 'Amount', 'Transaction_Type', 'Credit_Card_Number', 'IBAN', 'Currency_Code') \
                         .withColumn('Transaction_ID', monotonically_increasing_id()) \
-                        .select('Transaction_ID', 'Transaction_Date', 'Amount', 'Transaction_Type', 'Credit_Card_Number', 'IBAN', 'Currency_Code''Transaction_Date', 'Amount', 'Transaction_Type', 'Credit_Card_Number', 'IBAN', 'Currency_Code')
+                        .select('Transaction_ID', 'Transaction_Date', 'Amount', 'Transaction_Type', 'Credit_Card_Number', 'IBAN', 'Currency_Code')
 
 #Customer Table
 
